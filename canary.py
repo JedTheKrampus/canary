@@ -12,13 +12,13 @@ What hall is best?:
 PIN = 1928
 '''
 import os, sys
+from traceback import print_exc
 from googlevoice import Voice
 import commands
-#import canarydata
+from canarydata import phonebook
 
 EMAIL = 'nmtcanary@gmail.com'
 PASSWORD = 'NewMexicoTech'
-phonebook = []
 voice = Voice()
 
 def login():
@@ -44,7 +44,7 @@ def shell():
             if command[0] in ('clear','cls'):
                 os.system(['clear','cls'][os.name=='nt'])
                 continue
-            getattr(commands,command[0],commands.not_found)(voice, phonebook,command)
+            getattr(commands,command[0],commands.not_found)(voice, phonebook, command[1:])
         except (KeyboardInterrupt, SystemExit):
             print '\n'
             print '\aProcess Cancelled'
