@@ -4,20 +4,26 @@ canarydata.py
 '''
 import os.path
 
+phonebookdir = '/dat/phonebook.candat'
 phonebook = []
 
 def load_phonebook():
-    if os.path.exists('phonebook.candat'):
-        phonebook = pickle.load(open('phonebook.candat'))
-    
+    if not os.path.exists(phonebookdir):
+        phonebook_file = open(phonebookdir, 'w')
+        pickle.dump(phonebook, phonebook_file)
+        phonebook_file.close()
+    open(phonebookdir, 'r')
+    phonebook = pickle.load(phonebook_file)
+    phonebook_file.close()
+        
 
 class Student:
-    name
-    number
-    gender
-    year
-    hall 
-    roomnum
+    name = ''
+    number = ''
+    gender = None
+    year = None
+    hall = None
+    roomnum = 0
     clubs = []
     major = []
     minor = []
