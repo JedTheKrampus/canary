@@ -14,7 +14,7 @@ PIN = 1928
 import os, sys
 from googlevoice import Voice
 import commands
-import canarydata
+#import canarydata
 
 EMAIL = 'nmtcanary@gmail.com'
 PASSWORD = 'NewMexicoTech'
@@ -58,7 +58,23 @@ def main(argv):
     #load_phone_list()
     login()
     if len(argv) is 0:
-        print "Miner's Canary"
+        print '''
+
+                         _   _ __  __ _______ 
+                        | \ | |  \/  |__   __|
+                        |  \| | \  / |  | |   
+                        | . ` | |\/| |  | |   
+                        | |\  | |  | |  | |   
+                        |_| \_|_|  |_|  |_|   
+ __  __ _                 _        _____                             
+|  \/  (_)               ( )      / ____|                            
+| \  / |_ _ __   ___ _ __|/ ___  | |     __ _ _ __   __ _ _ __ _   _ 
+| |\/| | | '_ \ / _ \ '__| / __| | |    / _` | '_ \ / _` | '__| | | |
+| |  | | | | | |  __/ |    \__ \ | |___| (_| | | | | (_| | |  | |_| |
+|_|  |_|_|_| |_|\___|_|    |___/  \_____\__,_|_| |_|\__,_|_|   \__, |
+                                                                __/ |
+                                                               |___/ 
+'''
         shell()
         return 0
     print 'Only shell is active currently'
