@@ -25,7 +25,7 @@ def text(phonebook, voice, args):
             print filters
         print 'DONE'
     else:
-        print 'THIS IS WHERE THE COMAND ARGS SHOULD GO'
+        print 'THIS IS WHERE THE COMMAND ARGS SHOULD GO'
 
 def add_filter(filters):
     filter_type = raw_input('What type of filter? : ')
@@ -34,7 +34,7 @@ def add_filter(filters):
         halls = raw_input('Which halls?')
         halls = halls.lower().split()
         for hall in halls:
-            if hall not in ('west','presidents','south','bacha','driscoll'):
+            if hall not in ('west','presidents','south','baca','driscoll'):
                 print 'Hall "%s" not found...' % (hall)
                 print 'Filter not added...'
                 return
@@ -49,7 +49,7 @@ def add_filter(filters):
         filters.append((filter_type,gender))
         return
     if filter_type in ('year'):
-        years = raw_input('Which years? (only undergrad, number seperated by a space): ')
+        years = raw_input('Which years? (only undergrad, number separated by a space): ')
         years = years.split()
         for year in years:
             if year not in ('1','2','3','4','5','6'):
@@ -59,14 +59,11 @@ def add_filter(filters):
         filters.append((filter_type,years))
         return
     if filter_type in ('help','ls','list'):
-        print 'Type eather "hall", "gender", or "year" to creat a filter of the apropreat type.'
+        print 'Type either "hall", "gender", or "year" to create a filter of the appropriate type.'
         print 'Each will provide their own instructions for creating a filter.'
         return
     
                         
 def help(phonebook,voice,args):
-    print 'Welcome. It would apear you are fucked. Sucks to suck!'
+    print 'Welcome. It would appear you are fucked. Sucks to suck!'
 
-
-
-    
