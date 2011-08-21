@@ -25,7 +25,7 @@ def text(phonebook, voice, args):
             print filters
         print 'DONE'
     else:
-        print 'THIS IS WHERE THE COMAND ARGS SHOULD GO'
+        print 'THIS IS WHERE THE COMMAND ARGS SHOULD GO'
 
 def add_filter(filters):
     filter_type = raw_input('What type of filter? : ')
@@ -34,7 +34,7 @@ def add_filter(filters):
         halls = raw_input('Which halls?')
         halls = halls.lower().split()
         for hall in halls:
-            if hall not in ('west','presidents','south','bacha','driscoll'):
+            if hall not in ('west','presidents','south','baca','driscoll'):
                 print 'Hall "%s" not found...' % (hall)
                 print 'Filter not added...'
                 return
@@ -49,7 +49,7 @@ def add_filter(filters):
         filters.append((filter_type,gender))
         return
     if filter_type in ('year'):
-        years = raw_input('Which years? (only undergrad, number seperated by a space): ')
+        years = raw_input('Which years? (only undergrad, number separated by a space): ')
         years = years.split()
         for year in years:
             if year not in ('1','2','3','4','5','6'):
@@ -59,28 +59,11 @@ def add_filter(filters):
         filters.append((filter_type,years))
         return
     if filter_type in ('help','ls','list'):
-        print 'Type eather "hall", "gender", or "year" to creat a filter of the apropreat type.'
+        print 'Type either "hall", "gender", or "year" to create a filter of the appropriate type.'
         print 'Each will provide their own instructions for creating a filter.'
         return
     
                         
 def help(phonebook,voice,args):
-    print 'Welcome. It would apear you are fucked. Sucks to suck!'
+    print 'Welcome. It would appear you are fucked. Sucks to suck!'
 
-
-
-<<<<<<< HEAD
-def help():
-    print """Canary detects that you don't know what you are doing.
-
-Use the send command in the canary shell to send a mass text to the populace of
-New Mexico Tech. To do this, start canary.py and type a command like this:
-
-Canary> send "New Mexico Tech students: Meet in front of Presidents' Hall for an El Camino run."
-
-Then press enter. Canary will proceed to send out your mass text to all the
-students who have signed up to receive Canary text messages. Students may have
-opted in to delay texts or not receive them at all at certain times of day."""
-=======
-    
->>>>>>> 131dbe49330794ac647f95b5c36d0fed16cb1092
