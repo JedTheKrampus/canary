@@ -34,7 +34,7 @@ def login():
 def shell():
     while True:
         try:
-            command = raw_input('Canary>')
+            command = raw_input('Canary> ')
             command = command.lower().split()
             if command[0] in ('quit','exit'):
                 return
