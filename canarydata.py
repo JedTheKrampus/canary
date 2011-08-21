@@ -27,8 +27,17 @@ def load_phonebook():
     phonebook_file.close()
     print phonebook
 
+def save_phonebook():
+    phonebook_file = open(phonebookdir, 'w')
+    try:
+        pickle.dump(phonebook, phonebook_file, 2)
+    except:
+        print 'Error saving phonebook.'
+    phonebook_file.close()
+    
 def add_student(student):
     phonebook.append(student)
+    save_phonebook()
     
 def ensure_dir(f):
     d = os.path.dirname(f)
