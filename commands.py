@@ -22,11 +22,38 @@ def text(phonebook, voice, args):
         text = raw_input('What would you like to send?\n')
         while input('Would you like to add a filter? [y/N]: ').lower() in ('y'):
             add_filter(filters)
-            print filters
-        print 'DONE'
+        show_text(text,filters)
     else:
         print 'THIS IS WHERE THE COMMAND ARGS SHOULD GO'
 
+def show_text(text, filters):
+    print text
+    if len(filters) == 0:
+        print 'To be sent to all students'
+    else:
+        print 'To be sent to...'
+        for filt in filters:
+            if filt[0] == 'hall':
+                print 'Students of:'
+                for hall in filt[1]:
+                    print '\t%s Hall'%(hall)
+            elif filt[0] == 'gender':
+                print 'Students who are:'
+                if filt[1] is 'm':
+                    print '\tMale'
+                else:
+                    print '\tFemale'
+            elif filt[0] == 'year':
+                print 'Students in year:'
+                for year in filt[1]:
+                    print '\t%s'%(year)
+            else:
+                print filt
+                print filt[0]
+                print filt[0] is 'hall'
+                    
+                    
+                    
 def add_filter(filters):
     filter_type = raw_input('What type of filter? : ')
     filter_type = filter_type.lower()
