@@ -39,7 +39,7 @@ def main(argv):
     #load_phone_list()
     #login()
     if len(argv) is 0:
-        print "Minor's Canary"
+        print "Miner's Canary"
         shell()
         return 0
     print 'Only shell is active currently'
