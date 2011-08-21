@@ -35,4 +35,16 @@ def shell():
             print_exc()
             print
 
-            
+def main(argv):
+    #load_phone_list()
+    #login()
+    if len(argv) is 0:
+        print "Minor's Canary"
+        shell()
+        return 0
+    print 'Only shell is active currently'
+    print 'To activate, run "python canary.py" with no arguments'
+    return -1
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))
