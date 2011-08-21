@@ -27,6 +27,8 @@ def load_phonebook():
     phonebook_file.close()
     print phonebook
 
+def add_student(student):
+    phonebook.append(student)
     
 def ensure_dir(f):
     d = os.path.dirname(f)
