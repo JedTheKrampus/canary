@@ -4,6 +4,7 @@ canarydata.py
 '''
 import os.path
 import pickle
+from student import Student
 
 phonebookdir = 'dat/phonebook.candat'
 phonebook = []
@@ -33,14 +34,3 @@ def ensure_dir(f):
         os.makedirs(d)
 
 load_phonebook()
-
-class Student:
-    name = ''
-    number = ''
-    gender = None
-    year = None
-    hall = None
-    roomnum = 0
-    clubs = []
-    major = []
-    minor = []
