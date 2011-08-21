@@ -1,3 +1,8 @@
+'''
+student.py
+#   Created on Sun Aug 21 2011 by Arctem
+'''
+
 class Student:
     name = ''
     number = ''
