@@ -4,6 +4,8 @@
 
 from googlevoice import Voice
 from googlevoice.util import input
+from student import Student
+
 
 """This default command is called when the command does not exist."""
 def not_found(phonebook, voice, args):
@@ -14,9 +16,57 @@ the arguments. The last argument is the message, so you should enclose the
 message in quotes.
 
 Arguments before the message constitute subsets of the phonebook."""
-def send(phonebook, voice, args):
+def text(phonebook, voice, args):
     if len(args) == 0:
-        help()
+        filters = []
+        text = raw_input('What would you like to send?\n')
+        while input('Would you like to add a filter? [y/N]: ').lower() in ('y'):
+            add_filter(filters)
+            print filters
+        print 'DONE'
+    else:
+        print 'THIS IS WHERE THE COMAND ARGS SHOULD GO'
 
-def help():
-    print "Help logic goes here."
+def add_filter(filters):
+    filter_type = raw_input('What type of filter? : ')
+    filter_type = filter_type.lower()
+    if filter_type in ('hall'):
+        halls = raw_input('Which halls?')
+        halls = halls.lower().split()
+        for hall in halls:
+            if hall not in ('west','presidents','south','bacha','driscoll'):
+                print 'Hall "%s" not found...' % (hall)
+                print 'Filter not added...'
+                return
+        filters.append((filter_type,halls))
+        return
+    if filter_type in ('gender'):
+        gender = raw_input('Male of Female? [m/F]: ')
+        if gender.lower() not in ('m','f'):
+            print 'Error...'
+            print 'Type "m" for Male, or "f" for Female'
+            return
+        filters.append((filter_type,gender))
+        return
+    if filter_type in ('year'):
+        years = raw_input('Which years? (only undergrad, number seperated by a space): ')
+        years = years.split()
+        for year in years:
+            if year not in ('1','2','3','4','5','6'):
+                print 'Error...'
+                print '%s is not a valid number...' %(year)
+                return
+        filters.append((filter_type,years))
+        return
+    if filter_type in ('help','ls','list'):
+        print 'Type eather "hall", "gender", or "year" to creat a filter of the apropreat type.'
+        print 'Each will provide their own instructions for creating a filter.'
+        return
+    
+                        
+def help(phonebook,voice,args):
+    print 'Welcome. It would apear you are fucked. Sucks to suck!'
+
+
+
+    
