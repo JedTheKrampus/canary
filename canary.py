@@ -14,7 +14,7 @@ PIN = 1928
 import os, sys
 from googlevoice import Voice
 import commands
-#import canarydata
+import canarydata
 
 EMAIL = 'nmtcanary@gmail.com'
 PASSWORD = 'NewMexicoTech'
