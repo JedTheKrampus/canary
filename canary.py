@@ -4,18 +4,37 @@
 canary.py
 #   Created on Sun Aug 21 2011 11:01 GMT -0600 by Izzy Cecil & Fuzzo & Arctem
 '''
+'''
+What hall is best?:
+'West is best.'
+(575)-323-0668
+(575)-323-0NMT
+PIN = 1928
+'''
+import os, sys
+from googlevoice import Voice
+import commands
+import canarydata
 
-from googlevoice import Voice, input
-
-email = ''
-password = ''
-phonebook = {}
+EMAIL = 'nmtcanary@gmail.com'
+PASSWORD = 'NewMexicoTech'
+phonebook = []
 voice = Voice()
+
+def login():
+    print 'Logging in to nmtcanary@gmail.com...'
+    try:
+        voice.login(EMAIL, PASSWORD)
+        print 'Logged in as nmtcanary@gmail.com!'
+    except:
+        print 'Failed to login. Please make sure you are connected to the internet.'
+        
+    
 
 def shell():
     while True:
         try:
-            command = input('Canary>')
+            command = raw_input('Canary>')
             command = command.lower().split()
             if command[0] in ('quit','exit'):
                 return
@@ -37,7 +56,7 @@ def shell():
 
 def main(argv):
     #load_phone_list()
-    #login()
+    login()
     if len(argv) is 0:
         print "Miner's Canary"
         shell()
