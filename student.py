@@ -8,3 +8,15 @@ class Student:
     clubs = []
     major = []
     minor = []
+    time_restriction = []
+
+    def __init__(self, name, number, gender, year, hall, roomnum, clubs, major, minor):
+        self.name = name
+        self.number = number
+        self.gender = gender
+        self.year = year
+        self.hall = hall
+        self.roomnum = roomnum
+        self.clubs = clubs
+        self.major = major
+        self.minor = minor
