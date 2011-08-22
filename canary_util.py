@@ -77,7 +77,7 @@ def add_filter(filters):
                 return
         filters.append((filter_type,years))
         return
-    if filter_type in ('help','ls','list'):
+    else:
         print 'Type either "hall", "gender", or "year" to create a filter of the appropriate type.'
         print 'Each will provide their own instructions for creating a filter.'
         return
