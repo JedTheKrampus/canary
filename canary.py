@@ -16,6 +16,7 @@ from traceback import print_exc
 from googlevoice import Voice
 import commands
 from canarydata import phonebook
+from canary_util import Textcolors
 
 EMAIL = 'nmtcanary@gmail.com'
 PASSWORD = 'NewMexicoTech'
@@ -34,7 +35,7 @@ def login():
 def shell():
     while True:
         try:
-            command = raw_input('Canary> ')
+            command = raw_input(Textcolors.PROMPT+'Canary> '+Textcolors.END)
             command = command.lower().split()
             if command[0] in ('quit','exit'):
                 return
@@ -44,15 +45,15 @@ def shell():
             if command[0] in ('clear','cls'):
                 os.system(['clear','cls'][os.name=='nt'])
                 continue
-            getattr(commands,command[0],commands.not_found)(voice, phonebook, command[1:])
+            getattr(commands,command[0],commands.not_found)(voice, phonebook, command)
         except (KeyboardInterrupt, SystemExit):
             print '\n'
-            print '\aProcess Cancelled'
-            print
+            print Textcolors.FAIL+'\aProcess Cancelled'+Textcolors.END
+            print 
         except:
-            print ('\aAn Error Occured:')
+            print Textcolors.FAIL+'\aAn Error Occured:'
             print_exc()
-            print
+            print Textcolors.END
 
 def main(argv):
     #load_phone_list()
