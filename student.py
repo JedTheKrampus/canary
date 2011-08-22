@@ -25,7 +25,7 @@ class Student:
         self.clubs = clubs
         self.major = major
         self.minor = minor
-        
+'''        
     def set_value(self, name = self.name, number = self.number, gender = self.gender, year = self.year, hall = self.hall, roomnum = self.roomnum):
         self.name = name
         self.number = number
@@ -33,3 +33,4 @@ class Student:
         self.year = year
         self.hall = hall
         self.roomnum = roomnum
+'''
