@@ -25,12 +25,11 @@ class Student:
         self.clubs = clubs
         self.major = major
         self.minor = minor
-'''        
-    def set_value(self, name = self.name, number = self.number, gender = self.gender, year = self.year, hall = self.hall, roomnum = self.roomnum):
-        self.name = name
-        self.number = number
-        self.gender = gender
-        self.year = year
-        self.hall = hall
-        self.roomnum = roomnum
-'''
+        
+    def set_value(self, newname = name, num = number, gend = gender, y = year, h = hall, rnum = roomnum):
+        self.name = newname
+        self.number = num
+        self.gender = gend
+        self.year = y
+        self.hall = h
+        self.roomnum = rnum
