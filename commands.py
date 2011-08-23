@@ -82,7 +82,7 @@ def add(phonebook, voice, args):
     for i in xrange(len(minor)):
         minor[i] = minor[i].lower.strip()
 
-    phonebook.append(Student(name, number, gender, year, hall, roomnum, clubs, major, minor))
+    canarydata.add_student(Student(name, number, gender, year, hall, roomnum, clubs, major, minor))o
                             
 def help(phonebook,voice,args):
     print canary_util.Textcolors.OKBLUE+'Welcome. It would appear you are fucked. Sucks to suck!'
