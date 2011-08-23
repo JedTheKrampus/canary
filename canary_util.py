@@ -60,7 +60,7 @@ def add_filter(filters):
         filters.append((filter_type,halls))
         return
     if filter_type in ('gender'):
-        gender = raw_input(Textcolors.OKBLUE+'Male of Female? [m/F]: '+Textcolors.END)
+        gender = raw_input(Textcolors.OKBLUE+'Male or Female? [m/F]: '+Textcolors.END)
         if gender.lower() not in ('m','f'):
             print Textcolors.FAIL+'Error...'+Textcolors.END
             print Textcolors.FAIL+'Type "m" for Male, or "f" for Female'+Textcoor.END
