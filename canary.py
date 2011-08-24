@@ -74,7 +74,7 @@ def main(argv):
 | |  | | | | | |  __/ |    \__ \ | |___| (_| | | | | (_| | |  | |_| |
 |_|  |_|_|_| |_|\___|_|    |___/  \_____\__,_|_| |_|\__,_|_|   \__, |
                                                                 __/ |
-                                                               |___/ 
+Created by Spencer Brown, Tyler Cecil, and Russell White       |___/ 
 '''
         shell()
         return 0
