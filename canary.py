@@ -56,8 +56,8 @@ def shell():
             print Textcolors.END
 
 def main(argv):
-    canarydata.load_phonebook()
     login()
+    canarydata.load_phonebook()
     if len(argv) is 0:
         print '''
 
