@@ -22,6 +22,8 @@ EMAIL = 'nmtcanary@gmail.com'
 PASSWORD = 'NewMexicoTech'
 voice = Voice()
 
+debug = False
+
 def login():
     print 'Logging in to nmtcanary@gmail.com...'
     try:
@@ -56,8 +58,15 @@ def shell():
             print Textcolors.END
 
 def main(argv):
+    global debug
+    if 'debug' in argv:
+        debug = True
+        print 'Entering debug mode.'
+        argv.remove('debug')
+    else:
+        debug = False
     login()
-    canarydata.load_phonebook()
+    canarydata.load_phonebook(debug)
     if len(argv) is 0:
         print '''
 

@@ -5,11 +5,12 @@ canarydata.py
 import os.path
 import pickle
 from student import Student
+import canary
 
 phonebookdir = 'dat/phonebook.candat'
 phonebook = []
 
-def load_phonebook():
+def load_phonebook(debug):
     global phonebook
     ensure_dir('dat/')
     if not os.path.exists(phonebookdir):
@@ -25,7 +26,10 @@ def load_phonebook():
     phonebook_file = open(phonebookdir, 'r')
     phonebook = pickle.load(phonebook_file)
     phonebook_file.close()
-    print phonebook
+    if debug:
+        print phonebook
+    else:
+        print 'Loaded phonebook data for {} students.'.format(len(phonebook))
 
 def save_phonebook():
     phonebook_file = open(phonebookdir, 'w')
