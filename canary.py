@@ -15,7 +15,7 @@ import os, sys
 from traceback import print_exc
 from googlevoice import Voice
 import commands
-from canarydata import phonebook
+import canarydata
 from canary_util import Textcolors
 
 EMAIL = 'nmtcanary@gmail.com'
@@ -45,7 +45,7 @@ def shell():
             if command[0] in ('clear','cls'):
                 os.system(['clear','cls'][os.name=='nt'])
                 continue
-            getattr(commands,command[0],commands.not_found)(voice, phonebook, command)
+            getattr(commands,command[0],commands.not_found)(voice, canarydata.phonebook, command)
         except (KeyboardInterrupt, SystemExit):
             print '\n'
             print Textcolors.FAIL+'\aProcess Cancelled'+Textcolors.END
@@ -56,7 +56,7 @@ def shell():
             print Textcolors.END
 
 def main(argv):
-    #load_phone_list()
+    canarydata.load_phonebook()
     login()
     if len(argv) is 0:
         print '''
